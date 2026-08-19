@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ModeloDeAprendizado</string>
+    <string name="logo_name">colaboraae</string>
+    <string name="login_title">Faça Login</string>
+    <string name="email_label">E-mail</string>
+    <string name="password_label">Senha</string>
+    <string name="forgot_password">Esqueci minha senha</string>
+    <string name="login_button">Entrar</string>
+    <string name="footer_prefix">Ainda não tem uma conta? </string>
+    <string name="footer_link">Cadastre-se</string>
+    <string name="illustration_desc">Ilustração de login</string>
+
+    <!-- Tela de Cadastro -->
+    <string name="signup_title">Organize.\nColabore.\nEntregue.</string>
+    <string name="signup_subtitle">Insira seus dados de acesso</string>
+    <string name="name_label">Nome</string>
+    <string name="repeat_password_label">Repetir a Senha</string>
+    <string name="confirm_signup_button">Confirmar Cadastro</string>
+    <string name="already_have_account">Já tem uma conta? </string>
+    <string name="email_hint">Digite aqui seu email...</string>
+    <string name="receive_email_button">Receber E-mail</string>
+</resources>
