@@ -19,4 +19,15 @@
     <string name="already_have_account">Já tem uma conta? </string>
     <string name="email_hint">Digite aqui seu email...</string>
     <string name="receive_email_button">Receber E-mail</string>
+
+    <!-- Tela Principal -->
+    <string name="gerenciar_tarefas_text">Gerenciar suas tarefas ficou fácil com ColaboraAe!</string>
+    <string name="comecar_agora_button">COMEÇAR AGORA</string>
+    <string name="sobre_nos_title">SOBRE NÓS</string>
+    <string name="sobre_nos_p1">O ColaboraAe nasceu com um propósito simples: tornar a organização do trabalho mais clara, colaborativa e eficiente.</string>
+    <string name="sobre_nos_p2">Em um cenário onde equipes precisam lidar com múltiplas tarefas, prazos e responsabilidades, acreditamos que a produtividade não deve ser complicada. Por isso, desenvolvemos uma plataforma intuitiva, inspirada nas melhores práticas de gestão visual, que permite acompanhar atividades, organizar fluxos e colaborar em tempo real.</string>
+    <string name="sobre_nos_p3">Nosso objetivo é ajudar pessoas e equipes a transformarem ideias em resultados, reduzindo a desorganização e aumentando a transparência no dia a dia.</string>
+    <string name="sobre_nos_p4">Com uma interface moderna e fácil de usar, o ColaboraAE conecta pessoas, tarefas e objetivos em um só lugar — facilitando a comunicação, o acompanhamento de demandas e a entrega de projetos com mais eficiência.</string>
+    <string name="sobre_nos_p5">Mais do que uma ferramenta, somos um aliado na construção de rotinas mais produtivas, organizadas e colaborativas.</string>
+    <string name="footer_copyright">© 2026 ColaboraAe\nPlataforma de Gestão\nde Tarefas\nColaborativas</string>
 </resources>

@@ -13,21 +13,19 @@
         android:id="@+id/viewHeader"
         android:layout_width="0dp"
         android:layout_height="80dp"
-        android:background="@drawable/bg_header_gradient"
+        android:background="@drawable/bg_login_header_gradient"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Logo placeholder -->
-    <TextView
-        android:id="@+id/tvLogo"
-        android:layout_width="wrap_content"
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:text="@string/logo_name"
-        android:textColor="@color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"
+        android:adjustViewBounds="true"
+        android:src="@drawable/logo_branco"
         app:layout_constraintBottom_toBottomOf="@id/viewHeader"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/viewHeader" />
