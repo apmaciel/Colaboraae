@@ -9,6 +9,7 @@
     <string name="footer_prefix">Ainda não tem uma conta? </string>
     <string name="footer_link">Cadastre-se</string>
     <string name="illustration_desc">Ilustração de login</string>
+    <string name="slogan_desc">Slogan Colaboraae</string>
 
     <!-- Tela de Cadastro -->
     <string name="signup_title">Organize.\nColabore.\nEntregue.</string>
