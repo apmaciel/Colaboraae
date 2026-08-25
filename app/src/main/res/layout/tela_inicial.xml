@@ -19,7 +19,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:contentDescription="@string/logo_name"
-            android:src="@drawable/logo"
+            android:src="@drawable/img_logo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,7 +71,7 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"
             android:adjustViewBounds="true"
-            android:src="@drawable/ilustracao"
+            android:src="@drawable/img_ilustracao"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/viewHeroBg" />
@@ -215,7 +215,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/logo_com_slogan_branco"
+                android:src="@drawable/img_logo_com_slogan_branco"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

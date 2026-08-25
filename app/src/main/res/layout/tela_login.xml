@@ -30,7 +30,7 @@
             android:layout_marginStart="20dp"
             android:adjustViewBounds="true"
             android:contentDescription="@string/logo_name"
-            android:src="@drawable/logo_branco"
+            android:src="@drawable/img_logo_branco"
             app:layout_constraintBottom_toBottomOf="@id/viewHeader"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/viewHeader" />
@@ -59,7 +59,7 @@
             android:contentDescription="@string/illustration_desc"
             android:maxHeight="250dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/ilustracao"
+            android:src="@drawable/img_ilustracao"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/viewHeader" />

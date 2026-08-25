@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".TelaResetarSenhaActivity">
+    tools:context=".TelaSenhaAlteradaActivity">
 
     <!-- Header Gradient -->
     <View
@@ -44,90 +44,49 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/viewHeader" />
 
-    <!-- Title -->
+    <!-- Stars Illustration Placeholder -->
+    <ImageView
+        android:id="@+id/ivStarsIllustration"
+        android:layout_width="170dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/img_estrelas_sucesso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewHeader"
+        tools:ignore="ContentDescription" />
+
+    <!-- Success Message -->
     <TextView
-        android:id="@+id/tvResetTitle"
+        android:id="@+id/tvSuccessMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="@string/reset_password_title"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="@string/password_updated_success"
         android:textColor="@color/dark_purple_title"
-        android:textSize="32sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewHeader" />
+        app:layout_constraintTop_toBottomOf="@id/ivStarsIllustration" />
 
-    <!-- New Password Label -->
-    <TextView
-        android:id="@+id/tvNewPasswordLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/new_password_label"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvResetTitle" />
-
-    <EditText
-        android:id="@+id/etNewPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bg_edit_text"
-        android:hint="@string/password_hint"
-        android:inputType="textPassword"
-        android:paddingVertical="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvNewPasswordLabel" />
-
-    <!-- Confirm Password Label -->
-    <TextView
-        android:id="@+id/tvConfirmPasswordLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/confirm_new_password_label"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etNewPassword" />
-
-    <EditText
-        android:id="@+id/etConfirmPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bg_edit_text"
-        android:hint="@string/password_hint"
-        android:inputType="textPassword"
-        android:paddingVertical="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvConfirmPasswordLabel" />
-
-    <!-- Confirm Button -->
+    <!-- Login Button -->
     <Button
-        android:id="@+id/btnConfirmReset"
+        android:id="@+id/btnBackToLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="64dp"
         android:layout_marginTop="60dp"
         android:backgroundTint="@color/black"
         android:paddingVertical="14dp"
-        android:text="@string/confirm_button"
+        android:text="@string/go_to_login_button"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etConfirmPassword" />
+        app:layout_constraintTop_toBottomOf="@id/tvSuccessMessage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

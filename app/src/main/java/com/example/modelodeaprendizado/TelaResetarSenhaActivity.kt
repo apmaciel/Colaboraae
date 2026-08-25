@@ -35,7 +35,7 @@ class TelaResetarSenhaActivity : AppCompatActivity() {
             if (newPass.isNotEmpty() && confirmPass.isNotEmpty()) {
                 if (newPass == confirmPass) {
                     Toast.makeText(this, "Senha redefinida com sucesso!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, Telalogin::class.java)
+                    val intent = Intent(this, TelaSenhaAlteradaActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else {

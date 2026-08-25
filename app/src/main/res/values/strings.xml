@@ -38,4 +38,8 @@
     <string name="confirm_new_password_label">Confirme Nova Senha</string>
     <string name="confirm_button">Confirmar</string>
     <string name="password_hint">*******</string>
+
+    <!-- Tela Senha Alterada -->
+    <string name="password_updated_success">Sua senha foi atualizada\ncom sucesso!</string>
+    <string name="go_to_login_button">FAÇA LOGIN</string>
 </resources>
