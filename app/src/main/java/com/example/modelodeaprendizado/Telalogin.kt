@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,27 +15,36 @@ class Telalogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.tela_login)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.layoutHeaderFixed)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
         }
 
-        val etEmail = findViewById<EditText>(R.id.etEmail)
-        val etPassword = findViewById<EditText>(R.id.etPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         val tvForgotPassword = findViewById<TextView>(R.id.tvForgotPassword)
         val tvFooterLink = findViewById<TextView>(R.id.tvFooterLink)
+        val ivLogo = findViewById<android.widget.ImageView>(R.id.ivLogo)
+        val btnTopLogin = findViewById<TextView>(R.id.btnTopLogin)
+
+        ivLogo.setOnClickListener {
+            val intent = Intent(this, TelaPrincipalActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        btnTopLogin.setOnClickListener {
+            // Apenas recarrega ou mantém na tela como solicitado
+            val intent = Intent(this, Telalogin::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         btnLogin.setOnClickListener {
-            val email = etEmail.text.toString()
-            val password = etPassword.text.toString()
-
-            if (email.isNotEmpty() && password.isNotEmpty()) {
-                Toast.makeText(this, "Entrando...", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show()
-            }
+            // Redireciona para a própria tela de login conforme solicitado
+            val intent = Intent(this, Telalogin::class.java)
+            startActivity(intent)
+            finish()
         }
 
         tvForgotPassword.setOnClickListener {
