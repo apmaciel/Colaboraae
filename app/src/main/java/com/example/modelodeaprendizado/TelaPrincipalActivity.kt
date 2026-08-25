@@ -24,6 +24,12 @@ class TelaPrincipalActivity : AppCompatActivity() {
 
         val btnHeaderLogin = findViewById<Button>(R.id.btnHeaderLogin)
         val btnStartNow = findViewById<Button>(R.id.btnStartNow)
+        val ivLogoHeader = findViewById<android.widget.ImageView>(R.id.ivLogoHeader)
+        val scrollViewMain = findViewById<android.widget.ScrollView>(R.id.scrollViewMain)
+
+        ivLogoHeader.setOnClickListener {
+            scrollViewMain.smoothScrollTo(0, 0)
+        }
 
         btnHeaderLogin.setOnClickListener {
             val intent = Intent(this, Telalogin::class.java)
