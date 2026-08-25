@@ -15,7 +15,7 @@ class Telasenha1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.tela_senha_1)
+        setContentView(R.layout.tela_esqueci_senha)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main_senha_1)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

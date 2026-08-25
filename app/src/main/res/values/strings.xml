@@ -31,4 +31,11 @@
     <string name="sobre_nos_p4">Com uma interface moderna e fácil de usar, o ColaboraAE conecta pessoas, tarefas e objetivos em um só lugar — facilitando a comunicação, o acompanhamento de demandas e a entrega de projetos com mais eficiência.</string>
     <string name="sobre_nos_p5">Mais do que uma ferramenta, somos um aliado na construção de rotinas mais produtivas, organizadas e colaborativas.</string>
     <string name="footer_copyright">© 2026 ColaboraAe\nPlataforma de Gestão\nde Tarefas\nColaborativas</string>
+
+    <!-- Tela Resetar Senha -->
+    <string name="reset_password_title">Recuperar Senha</string>
+    <string name="new_password_label">Nova Senha</string>
+    <string name="confirm_new_password_label">Confirme Nova Senha</string>
+    <string name="confirm_button">Confirmar</string>
+    <string name="password_hint">*******</string>
 </resources>

@@ -12,7 +12,7 @@ class TelaPrincipalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.tela_principal)
+        setContentView(R.layout.tela_inicial)
 
         // Adjust for system bars
         val mainLayout = findViewById<android.view.View>(android.R.id.content)
