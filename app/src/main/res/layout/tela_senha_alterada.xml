@@ -7,86 +7,102 @@
     android:background="@color/white"
     tools:context=".TelaSenhaAlteradaActivity">
 
-    <!-- Header Gradient -->
-    <View
-        android:id="@+id/viewHeader"
-        android:layout_width="0dp"
+    <!-- Fixed Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeaderFixed"
+        android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@drawable/bg_login_header_gradient"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:elevation="4dp"
+        android:translationZ="10dp"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <!-- Logo -->
-    <ImageView
-        android:id="@+id/ivLogo"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/logo_name"
-        android:src="@drawable/img_logo_branco"
-        app:layout_constraintBottom_toBottomOf="@id/viewHeader"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/viewHeader" />
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/logo_name"
+            android:src="@drawable/img_logo_branco"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Top Right Button -->
-    <TextView
-        android:id="@+id/btnTopLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/bg_header_button"
-        android:text="@string/login_title"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/viewHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/viewHeader" />
+        <TextView
+            android:id="@+id/btnTopLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_header_button"
+            android:text="@string/login_title"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Stars Illustration Placeholder -->
-    <ImageView
-        android:id="@+id/ivStarsIllustration"
-        android:layout_width="170dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/img_estrelas_sucesso"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewHeader"
-        tools:ignore="ContentDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Success Message -->
-    <TextView
-        android:id="@+id/tvSuccessMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:text="@string/password_updated_success"
-        android:textColor="@color/dark_purple_title"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivStarsIllustration" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeaderFixed">
 
-    <!-- Login Button -->
-    <Button
-        android:id="@+id/btnBackToLogin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="64dp"
-        android:layout_marginTop="60dp"
-        android:backgroundTint="@color/black"
-        android:paddingVertical="14dp"
-        android:text="@string/go_to_login_button"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:cornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSuccessMessage" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <!-- Stars Illustration Placeholder -->
+            <ImageView
+                android:id="@+id/ivStarsIllustration"
+                android:layout_width="170dp"
+                android:layout_height="105dp"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/img_estrelas_sucesso"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <!-- Success Message -->
+            <TextView
+                android:id="@+id/tvSuccessMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="@string/password_updated_success"
+                android:textColor="@color/dark_purple_title"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivStarsIllustration" />
+
+            <!-- Login Button -->
+            <Button
+                android:id="@+id/btnBackToLogin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="64dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="@color/black"
+                android:paddingVertical="14dp"
+                android:text="@string/go_to_login_button"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:cornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSuccessMessage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

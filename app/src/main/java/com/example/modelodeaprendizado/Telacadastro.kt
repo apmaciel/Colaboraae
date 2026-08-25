@@ -17,9 +17,9 @@ class Telacadastro : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.tela_cadastro)
         
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main_cadastro)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.layoutHeaderFixed)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
         }
 
@@ -30,6 +30,13 @@ class Telacadastro : AppCompatActivity() {
         val btnConfirmSignup = findViewById<Button>(R.id.btnConfirmSignup)
         val tvLoginLink = findViewById<TextView>(R.id.tvLoginLink)
         val btnTopLogin = findViewById<TextView>(R.id.btnTopLogin)
+        val ivLogo = findViewById<android.widget.ImageView>(R.id.ivLogo)
+
+        ivLogo.setOnClickListener {
+            val intent = Intent(this, TelaPrincipalActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         btnConfirmSignup.setOnClickListener {
             val name = etName.text.toString()

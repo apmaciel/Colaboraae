@@ -17,9 +17,9 @@ class TelaResetarSenhaActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.tela_resetar_senha)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.layoutHeaderFixed)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
         }
 
@@ -27,6 +27,13 @@ class TelaResetarSenhaActivity : AppCompatActivity() {
         val etConfirmPassword = findViewById<EditText>(R.id.etConfirmPassword)
         val btnConfirmReset = findViewById<Button>(R.id.btnConfirmReset)
         val btnTopLogin = findViewById<TextView>(R.id.btnTopLogin)
+        val ivLogo = findViewById<android.widget.ImageView>(R.id.ivLogo)
+
+        ivLogo.setOnClickListener {
+            val intent = Intent(this, TelaPrincipalActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         btnConfirmReset.setOnClickListener {
             val newPass = etNewPassword.text.toString()
