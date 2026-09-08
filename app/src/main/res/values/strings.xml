@@ -42,4 +42,109 @@
     <!-- Tela Senha Alterada -->
     <string name="password_updated_success">Sua senha foi atualizada\ncom sucesso!</string>
     <string name="go_to_login_button">FAÇA LOGIN</string>
+
+    <!-- Tela Membro de Equipe -->
+    <string name="membro_equipe_title">Membro de equipe</string>
+    <string name="logout_desc">Sair</string>
+    <string name="tarefas_atribuidas_text">8 tarefas atribuídas</string>
+    <string name="detalhes_button">Detalhes</string>
+    <string name="concluir_button">Concluir</string>
+    <string name="status_concluida">Concluída</string>
+    <string name="status_em_andamento">Em andamento</string>
+    <string name="prioridade_baixa">Baixa</string>
+    <string name="prioridade_media">Média</string>
+    <string name="prioridade_alta">Alta</string>
+    <string name="tarefas_nav_label">Tarefas</string>
+    <string name="tarefa_1_titulo">Realizar relatório do software</string>
+    <string name="tarefa_1_responsavel">Ana Maria</string>
+    <string name="tarefa_1_data">14/06/2026</string>
+    <string name="tarefa_2_titulo">Consertar bug</string>
+    <string name="tarefa_2_responsavel">João Fernandes</string>
+    <string name="tarefa_2_data">29/07/2026</string>
+    <string name="tarefa_3_titulo">Fazer CRUD</string>
+    <string name="tarefa_3_responsavel">Roberta Santos</string>
+    <string name="tarefa_3_data">05/08/2026</string>
+
+    <!-- Tela Administrador de Equipe -->
+    <string name="administrador_equipe_title">Administrador de equipe</string>
+    <string name="gerenciar_button">Gerenciar</string>
+    <string name="team_nav_desc">Equipe</string>
+    <string name="add_task_desc">Adicionar tarefa</string>
+
+    <!-- Tela Minha Equipe -->
+    <string name="minha_equipe_title">Minha Equipe</string>
+    <string name="membros_count_text">4 membro(s)</string>
+    <string name="nome_membro_header">NOME DO MEMBRO</string>
+    <string name="email_header">EMAIL</string>
+    <string name="excluir_button">Excluir</string>
+    <string name="remove_member_desc">Remover membro</string>
+    <string name="add_member_desc">Adicionar membro</string>
+    <string name="membro_1_nome">Ana Maria</string>
+    <string name="membro_1_email">maria@gmail.com</string>
+    <string name="membro_2_nome">José Fernandes</string>
+    <string name="membro_2_email">fernandes@gmail.com</string>
+    <string name="membro_3_nome">Roberto Santos</string>
+    <string name="membro_3_email">robsantos@gmail.com</string>
+    <string name="membro_4_nome">Marcos Silva</string>
+    <string name="membro_4_email">marcos.s@gmail.com</string>
+
+    <!-- Tela Atribuir Nova Tarefa -->
+    <string name="atribuir_nova_tarefa_title">Atribuir Nova Tarefa</string>
+    <string name="nome_tarefa_label">Nome Tarefa</string>
+    <string name="responsavel_label">Responsável</string>
+    <string name="prazo_label">Prazo</string>
+    <string name="prioridade_label">Prioridade</string>
+    <string name="descricao_label">Descrição</string>
+    <string name="cancelar_button">Cancelar</string>
+    <string name="criar_button">Criar</string>
+    <string name="back_desc">Voltar</string>
+    <string name="calendar_desc">Selecionar data</string>
+    <string name="task_created_message">Tarefa criada com sucesso!</string>
+
+    <!-- Tela Criar Membro -->
+    <string name="criacao_novo_usuario_title">Criação de Novo Usuário Membro</string>
+    <string name="email_membro_label">Email</string>
+    <string name="senha_padrao_label">Senha Padrão:</string>
+    <string name="senha_padrao_value">Temp_2026</string>
+    <string name="member_created_message">Membro criado com sucesso!</string>
+
+    <!-- Tela Gerenciar Tarefa -->
+    <string name="gerenciar_tarefa_title">Gerenciar Tarefa</string>
+    <string name="edit_icon_desc">Editar tarefa</string>
+    <string name="nome_da_tarefa_header">NOME DA TAREFA</string>
+    <string name="responsavel_header">RESPONSÁVEL</string>
+    <string name="status_header">STATUS</string>
+    <string name="prioridade_header">PRIORIDADE</string>
+    <string name="prazo_header">PRAZO</string>
+    <string name="descricao_da_tarefa_header">DESCRIÇÃO DA TAREFA</string>
+    <string name="excluir_tarefa_button">Excluir Tarefa</string>
+    <string name="salvar_alteracoes_button">Salvar Alterações</string>
+    <string name="voltar_button">Voltar</string>
+    <string name="delete_icon_desc">Excluir tarefa</string>
+    <string name="tarefa_gerenciar_prazo_data">14/07/2026</string>
+    <string name="task_updated_message">Alterações salvas com sucesso!</string>
+    <string name="task_deleted_message">Tarefa excluída com sucesso!</string>
+
+    <!-- Tela Ver Detalhes da Tarefa -->
+    <string name="detalhe_tarefa_titulo">Registrar relatório financeiro</string>
+    <string name="responsavel_colon_label">RESPONSÁVEL:</string>
+    <string name="status_colon_label">STATUS:</string>
+    <string name="prioridade_colon_label">PRIORIDADE:</string>
+    <string name="detalhe_responsavel_valor">Ana Luiza</string>
+    <string name="detalhe_status_valor">Em Andamento</string>
+    <string name="descricao_tarefa_texto">Fazer o relatório até sexta feira e enviar ao gerente.</string>
+    <string name="comentarios_title">Comentários</string>
+    <string name="comentario_autor_1">Maria Silva</string>
+    <string name="comentario_data_1">03/08/2026 12:15</string>
+    <string name="comentario_texto_1">Comecei a fazer a tarefa!</string>
+    <string name="comentario_hint">Digite aqui seu comentário….</string>
+    <string name="enviar_button">Enviar</string>
+    <string name="historico_alteracoes_title">Histórico de Alterações</string>
+    <string name="historico_item_1_texto">Status alterado para Concluída</string>
+    <string name="historico_item_1_data">03/08/2026 12:15</string>
+    <string name="historico_item_2_texto">Esta tarefa foi editada</string>
+    <string name="historico_item_2_data">01/08/2026 09:55</string>
+    <string name="comment_icon_desc">Comentários</string>
+    <string name="history_icon_desc">Histórico</string>
+    <string name="send_icon_desc">Enviar comentário</string>
 </resources>

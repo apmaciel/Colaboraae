@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="responsavel_options">
+        <item></item>
+        <item>@string/membro_1_nome</item>
+        <item>@string/membro_2_nome</item>
+        <item>@string/membro_3_nome</item>
+        <item>@string/membro_4_nome</item>
+    </string-array>
+
+    <string-array name="prioridade_options">
+        <item></item>
+        <item>@string/prioridade_baixa</item>
+        <item>@string/prioridade_media</item>
+        <item>@string/prioridade_alta</item>
+    </string-array>
+
+    <string-array name="status_options">
+        <item></item>
+        <item>@string/status_em_andamento</item>
+        <item>@string/status_concluida</item>
+    </string-array>
+</resources>

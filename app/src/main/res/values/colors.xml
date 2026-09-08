@@ -18,4 +18,28 @@
     <!-- Cores do header de login/cadastro -->
     <color name="login_header_gradient_start">#8344FF</color>
     <color name="login_header_gradient_end">#FFC4FD</color>
+
+    <!-- Cores da tela de Membro de Equipe -->
+    <color name="header_subtitle_purple">#BFA6FF</color>
+    <color name="pill_gray_bg">#E4E4E4</color>
+    <color name="card_border_gray">#E0E0E0</color>
+    <color name="gray_text">#757575</color>
+    <color name="status_success_green">#2E7D32</color>
+    <color name="status_warning_yellow">#B8860B</color>
+    <color name="status_danger_pink">#E0637E</color>
+    <color name="btn_blue">#1565C0</color>
+    <color name="btn_green">#4CAF50</color>
+    <color name="btn_gray">#9E9E9E</color>
+    <color name="fab_purple">#7B4FE0</color>
+
+    <!-- Cores da tela Minha Equipe -->
+    <color name="table_dark_bg">#585858</color>
+    <color name="table_header_gray">#B5B5B5</color>
+    <color name="table_divider">#6E6E6E</color>
+    <color name="member_name_blue">#4FC3F7</color>
+    <color name="btn_orange">#D97B52</color>
+
+    <!-- Cores da tela Gerenciar Tarefa -->
+    <color name="disabled_field_bg">#D8D8D8</color>
+    <color name="label_gray">#9E9E9E</color>
 </resources>

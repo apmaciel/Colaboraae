@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "224701436563",
+    "project_id": "modelodeaprendizado-a55866d3",
+    "storage_bucket": "modelodeaprendizado-a55866d3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224701436563:android:2cfbda57b463faba907366",
+        "android_client_info": {
+          "package_name": "com.example.modelodeaprendizado"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAahf6tQSU9YcOwbmWjueitPCuL4aYPNE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
