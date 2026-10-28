@@ -121,7 +121,9 @@
         android:layout_height="0dp"
         android:clipToPadding="false"
         app:layout_constraintBottom_toTopOf="@id/layoutBottomNav"
-        app:layout_constraintTop_toBottomOf="@id/layoutHeaderFixed">
+        app:layout_constraintTop_toBottomOf="@id/layoutHeaderFixed"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="138dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -216,7 +218,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:background="@drawable/bg_spinner_field_gray"
-                        android:entries="@array/responsavel_options"
                         android:paddingHorizontal="12dp"
                         android:paddingVertical="10dp" />
 

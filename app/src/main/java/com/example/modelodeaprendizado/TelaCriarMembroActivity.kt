@@ -75,7 +75,8 @@ class TelaCriarMembroActivity : AppCompatActivity() {
                     val memberData = hashMapOf(
                         UserRoles.FIELD_NOME_MEMBRO to name,
                         UserRoles.FIELD_EMAIL_MEMBRO to email,
-                        UserRoles.FIELD_TIPO_USUARIO to UserRoles.MEMBER
+                        UserRoles.FIELD_TIPO_USUARIO to UserRoles.MEMBER,
+                        UserRoles.FIELD_ADMIN_UID to FirebaseAuth.getInstance().currentUser?.uid
                     )
                     FirebaseFirestore.getInstance().collection(UserRoles.COLLECTION)
                         .document(newUid)

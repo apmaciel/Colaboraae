@@ -147,4 +147,17 @@
     <string name="comment_icon_desc">Comentários</string>
     <string name="history_icon_desc">Histórico</string>
     <string name="send_icon_desc">Enviar comentário</string>
+
+    <!-- Tarefas dinâmicas -->
+    <plurals name="tarefas_atribuidas_count">
+        <item quantity="one">%d tarefa atribuída</item>
+        <item quantity="other">%d tarefas atribuídas</item>
+    </plurals>
+    <string name="nenhuma_tarefa_text">Nenhuma tarefa por aqui.</string>
+    <string name="responsavel_card_format">Responsável: %1$s</string>
+    <string name="tarefa_campos_obrigatorios">Preencha nome, responsável, prazo e prioridade.</string>
+    <string name="tarefa_sem_membros">Cadastre um membro na sua equipe antes de criar tarefas.</string>
+    <string name="tarefa_erro_criar">Erro ao criar tarefa. Tente novamente.</string>
+    <string name="tarefa_erro_carregar">Erro ao carregar tarefas.</string>
+    <string name="tarefa_concluida_message">Tarefa concluída!</string>
 </resources>

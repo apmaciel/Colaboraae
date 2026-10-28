@@ -103,7 +103,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:background="@drawable/bg_spinner_field"
-                android:entries="@array/responsavel_options"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
