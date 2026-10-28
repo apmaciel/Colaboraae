@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Card de tarefa usado nas telas do administrador e do membro. -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/bg_task_card"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/dark_purple_title"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/btnDetalhes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/tarefa_1_titulo" />
+
+    <Button
+        android:id="@+id/btnDetalhes"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="110dp"
+        android:layout_height="46dp"
+        android:backgroundTint="@color/btn_blue"
+        android:minWidth="0dp"
+        android:paddingHorizontal="16dp"
+        android:text="@string/detalhes_button"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAcao"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="110dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/btn_gray"
+        android:minWidth="0dp"
+        android:paddingHorizontal="16dp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnDetalhes"
+        tools:text="@string/gerenciar_button" />
+
+    <TextView
+        android:id="@+id/tvResponsavel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/gray_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/btnAcao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        tools:text="@string/tarefa_1_responsavel" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierTopo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tvResponsavel,btnAcao" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrierTopo"
+        tools:text="@string/status_em_andamento" />
+
+    <TextView
+        android:id="@+id/tvPrioridade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvStatus"
+        app:layout_constraintStart_toEndOf="@id/tvStatus"
+        tools:text="@string/prioridade_alta" />
+
+    <TextView
+        android:id="@+id/tvData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/gray_text"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvStatus"
+        app:layout_constraintStart_toEndOf="@id/tvPrioridade"
+        tools:text="@string/tarefa_1_data" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
