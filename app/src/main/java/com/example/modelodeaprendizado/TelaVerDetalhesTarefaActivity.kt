@@ -30,13 +30,5 @@ class TelaVerDetalhesTarefaActivity : AppCompatActivity() {
 
         val btnVoltar = findViewById<Button>(R.id.btnVoltar)
         btnVoltar.setOnClickListener { finish() }
-
-        val etComentario = findViewById<EditText>(R.id.etComentario)
-        val btnEnviar = findViewById<MaterialButton>(R.id.btnEnviar)
-        btnEnviar.setOnClickListener {
-            if (etComentario.text.isNotBlank()) {
-                etComentario.text.clear()
-            }
-        }
     }
 }
