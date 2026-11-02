@@ -17,8 +17,12 @@ import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-/** Nomes da coleção e dos campos das tarefas no Firestore. */
+/**
+ * Nomes da coleção e dos campos das tarefas no Firestore.
+ * As tarefas ficam em usuarios/{uid do responsável}/tarefas/{id}.
+ */
 object Tarefas {
+    /** Nome da subcoleção dentro de cada usuário (e do collectionGroup usado pelo admin). */
     const val COLLECTION = "tarefas"
     const val FIELD_NOME = "nome"
     const val FIELD_DESCRICAO = "descricao"
@@ -31,10 +35,18 @@ object Tarefas {
     const val FIELD_CRIADA_EM = "criada_em"
 
     const val EXTRA_TAREFA_ID = "tarefa_id"
+    const val EXTRA_RESPONSAVEL_UID = "responsavel_uid"
+
+    /** Subcoleção de tarefas do usuário [uid]. */
+    fun doUsuario(uid: String) = FirebaseFirestore.getInstance()
+        .collection(UserRoles.COLLECTION)
+        .document(uid)
+        .collection(COLLECTION)
 }
 
 data class Tarefa(
     val id: String,
+    val responsavelUid: String,
     val nome: String,
     val responsavelNome: String,
     val prazo: Timestamp?,
@@ -44,6 +56,7 @@ data class Tarefa(
     companion object {
         fun from(doc: DocumentSnapshot) = Tarefa(
             id = doc.id,
+            responsavelUid = doc.getString(Tarefas.FIELD_RESPONSAVEL_UID).orEmpty(),
             nome = doc.getString(Tarefas.FIELD_NOME).orEmpty(),
             responsavelNome = doc.getString(Tarefas.FIELD_RESPONSAVEL_NOME).orEmpty(),
             prazo = doc.getTimestamp(Tarefas.FIELD_PRAZO),

@@ -27,7 +27,20 @@
             android:contentDescription="@string/back_desc"
             android:focusable="true"
             android:src="@drawable/ic_logout"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivMenu"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:clickable="true"
+            android:contentDescription="@string/menu_desc"
+            android:focusable="true"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -79,7 +92,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="@string/detalhe_tarefa_titulo"
+                        tools:text="@string/detalhe_tarefa_titulo"
                         android:textColor="@color/white"
                         android:textSize="17sp"
                         android:textStyle="bold"
@@ -111,10 +124,11 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/tvDetalheResponsavel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/detalhe_responsavel_valor"
+                            tools:text="@string/detalhe_responsavel_valor"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -128,10 +142,11 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/tvDetalheStatus"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/detalhe_status_valor"
+                            tools:text="@string/detalhe_status_valor"
                             android:textColor="@color/status_warning_yellow"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -146,10 +161,11 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/tvDetalhePrioridade"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/prioridade_baixa"
+                            tools:text="@string/prioridade_baixa"
                             android:textColor="@color/status_success_green"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -172,10 +188,11 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/tvDetalheDescricao"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/descricao_tarefa_texto"
+                            tools:text="@string/descricao_tarefa_texto"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -189,10 +206,11 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/tvDetalhePrazo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/tarefa_gerenciar_prazo_data"
+                            tools:text="@string/tarefa_gerenciar_prazo_data"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 

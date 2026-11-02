@@ -9,7 +9,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
@@ -33,6 +32,8 @@ class TelaCriarMembroActivity : AppCompatActivity() {
         val ivBack = findViewById<ImageView>(R.id.ivBack)
         ivBack.setOnClickListener { finish() }
 
+        configurarMenuAdministrador(findViewById(R.id.ivMenu))
+
         val btnCancelar = findViewById<Button>(R.id.btnCancelar)
         btnCancelar.setOnClickListener { finish() }
 
@@ -54,12 +55,7 @@ class TelaCriarMembroActivity : AppCompatActivity() {
 
             // Usa um app secundário do Firebase só para criar a conta, assim a
             // sessão do administrador logado não é substituída pela do novo membro.
-            val secondaryApp = try {
-                FirebaseApp.getInstance("MemberCreation")
-            } catch (e: IllegalStateException) {
-                FirebaseApp.initializeApp(this, FirebaseApp.getInstance().options, "MemberCreation")
-            }
-            val secondaryAuth = FirebaseAuth.getInstance(secondaryApp)
+            val secondaryAuth = authSecundario(this)
 
             secondaryAuth.createUserWithEmailAndPassword(email, defaultPassword)
                 .addOnSuccessListener { authResult ->

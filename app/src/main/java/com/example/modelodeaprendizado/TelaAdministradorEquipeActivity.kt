@@ -31,14 +31,7 @@ class TelaAdministradorEquipeActivity : AppCompatActivity() {
             insets
         }
 
-        val ivLogout = findViewById<ImageView>(R.id.ivLogout)
-        ivLogout.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            val intent = Intent(this, Telalogin::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
-            startActivity(intent)
-            finish()
-        }
+        configurarMenuAdministrador(findViewById(R.id.ivMenu))
 
         val ivTeamNav = findViewById<ImageView>(R.id.ivTeamNav)
         ivTeamNav.setOnClickListener {
@@ -59,7 +52,8 @@ class TelaAdministradorEquipeActivity : AppCompatActivity() {
         val adminUid = FirebaseAuth.getInstance().currentUser?.uid ?: return
 
         // Escuta em tempo real: tarefas novas ou alteradas aparecem sem recarregar a tela.
-        tarefasListener = FirebaseFirestore.getInstance().collection(Tarefas.COLLECTION)
+        // Tarefas ficam na subcoleção de cada membro; o collectionGroup reúne todas elas.
+        tarefasListener = FirebaseFirestore.getInstance().collectionGroup(Tarefas.COLLECTION)
             .whereEqualTo(Tarefas.FIELD_ADMIN_UID, adminUid)
             .addSnapshotListener { snapshot, error ->
                 if (error != null || snapshot == null) {
@@ -88,6 +82,7 @@ class TelaAdministradorEquipeActivity : AppCompatActivity() {
     private fun abrirTela(tela: Class<*>, tarefa: Tarefa) {
         val intent = Intent(this, tela)
         intent.putExtra(Tarefas.EXTRA_TAREFA_ID, tarefa.id)
+        intent.putExtra(Tarefas.EXTRA_RESPONSAVEL_UID, tarefa.responsavelUid)
         startActivity(intent)
     }
 }

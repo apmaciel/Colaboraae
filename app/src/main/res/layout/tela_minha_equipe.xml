@@ -20,11 +20,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/ivLogout"
+            android:id="@+id/ivBack"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:clickable="true"
-            android:contentDescription="@string/logout_desc"
+            android:contentDescription="@string/back_desc"
             android:focusable="true"
             android:src="@drawable/ic_logout"
             app:layout_constraintBottom_toBottomOf="@id/tvAdminTitle"
@@ -41,9 +41,21 @@
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ivLogout"
+            app:layout_constraintEnd_toStartOf="@id/ivMenu"
+            app:layout_constraintStart_toEndOf="@id/ivBack"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivMenu"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:clickable="true"
+            android:contentDescription="@string/menu_desc"
+            android:focusable="true"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintBottom_toBottomOf="@id/tvAdminTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvAdminTitle" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -177,7 +189,7 @@
                         android:background="@drawable/bg_pill_light_purple"
                         android:paddingHorizontal="14dp"
                         android:paddingVertical="6dp"
-                        android:text="@string/membros_count_text"
+                        tools:text="@string/membros_count_text"
                         android:textColor="@color/dark_purple_title"
                         android:textSize="13sp"
                         android:textStyle="bold"
@@ -226,208 +238,23 @@
                         android:layout_height="1dp"
                         android:background="@color/table_divider" />
 
-                    <!-- Membro 1 -->
+                    <!-- Membros carregados do Firestore -->
                     <LinearLayout
+                        android:id="@+id/llMembros"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingHorizontal="16dp"
-                        android:paddingVertical="10dp">
+                        android:orientation="vertical" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.9"
-                            android:text="@string/membro_1_nome"
-                            android:textColor="@color/member_name_blue"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1.4"
-                            android:text="@string/membro_1_email"
-                            android:textColor="@color/white"
-                            android:textSize="13sp" />
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnExcluir1"
-                            style="@style/Widget.MaterialComponents.Button"
-                            android:layout_width="wrap_content"
-                            android:layout_height="36dp"
-                            android:backgroundTint="@color/btn_orange"
-                            android:minWidth="0dp"
-                            android:paddingHorizontal="12dp"
-                            android:text="@string/excluir_button"
-                            android:textAllCaps="false"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-                            app:cornerRadius="18dp"
-                            app:icon="@drawable/ic_person"
-                            app:iconGravity="textStart"
-                            app:iconPadding="4dp"
-                            app:iconSize="16dp"
-                            app:iconTint="@color/white" />
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/table_divider" />
-
-                    <!-- Membro 2 -->
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/tvSemMembros"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingHorizontal="16dp"
-                        android:paddingVertical="10dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.9"
-                            android:text="@string/membro_2_nome"
-                            android:textColor="@color/member_name_blue"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1.4"
-                            android:text="@string/membro_2_email"
-                            android:textColor="@color/white"
-                            android:textSize="13sp" />
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnExcluir2"
-                            style="@style/Widget.MaterialComponents.Button"
-                            android:layout_width="wrap_content"
-                            android:layout_height="36dp"
-                            android:backgroundTint="@color/btn_orange"
-                            android:minWidth="0dp"
-                            android:paddingHorizontal="12dp"
-                            android:text="@string/excluir_button"
-                            android:textAllCaps="false"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-                            app:cornerRadius="18dp"
-                            app:icon="@drawable/ic_person"
-                            app:iconGravity="textStart"
-                            app:iconPadding="4dp"
-                            app:iconSize="16dp"
-                            app:iconTint="@color/white" />
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/table_divider" />
-
-                    <!-- Membro 3 -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingHorizontal="16dp"
-                        android:paddingVertical="10dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.9"
-                            android:text="@string/membro_3_nome"
-                            android:textColor="@color/member_name_blue"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1.4"
-                            android:text="@string/membro_3_email"
-                            android:textColor="@color/white"
-                            android:textSize="13sp" />
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnExcluir3"
-                            style="@style/Widget.MaterialComponents.Button"
-                            android:layout_width="wrap_content"
-                            android:layout_height="36dp"
-                            android:backgroundTint="@color/btn_orange"
-                            android:minWidth="0dp"
-                            android:paddingHorizontal="12dp"
-                            android:text="@string/excluir_button"
-                            android:textAllCaps="false"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-                            app:cornerRadius="18dp"
-                            app:icon="@drawable/ic_person"
-                            app:iconGravity="textStart"
-                            app:iconPadding="4dp"
-                            app:iconSize="16dp"
-                            app:iconTint="@color/white" />
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/table_divider" />
-
-                    <!-- Membro 4 -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingHorizontal="16dp"
-                        android:paddingVertical="10dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.9"
-                            android:text="@string/membro_4_nome"
-                            android:textColor="@color/member_name_blue"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1.4"
-                            android:text="@string/membro_4_email"
-                            android:textColor="@color/white"
-                            android:textSize="13sp" />
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnExcluir4"
-                            style="@style/Widget.MaterialComponents.Button"
-                            android:layout_width="wrap_content"
-                            android:layout_height="36dp"
-                            android:backgroundTint="@color/btn_orange"
-                            android:minWidth="0dp"
-                            android:paddingHorizontal="12dp"
-                            android:text="@string/excluir_button"
-                            android:textAllCaps="false"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-                            app:cornerRadius="18dp"
-                            app:icon="@drawable/ic_person"
-                            app:iconGravity="textStart"
-                            app:iconPadding="4dp"
-                            app:iconSize="16dp"
-                            app:iconTint="@color/white" />
-
-                    </LinearLayout>
+                        android:gravity="center"
+                        android:paddingVertical="20dp"
+                        android:text="@string/nenhum_membro_text"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
 
                 </LinearLayout>
 

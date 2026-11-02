@@ -160,4 +160,21 @@
     <string name="tarefa_erro_criar">Erro ao criar tarefa. Tente novamente.</string>
     <string name="tarefa_erro_carregar">Erro ao carregar tarefas.</string>
     <string name="tarefa_concluida_message">Tarefa concluída!</string>
+    <plurals name="membros_count">
+        <item quantity="one">%d membro</item>
+        <item quantity="other">%d membros</item>
+    </plurals>
+    <string name="menu_criar_membro">Criar Membro</string>
+    <string name="menu_desc">Menu</string>
+    <string name="nenhum_membro_text">Nenhum membro cadastrado.</string>
+    <string name="membro_erro_carregar">Erro ao carregar membros.</string>
+    <string name="membro_erro_excluir">Erro ao excluir membro. Tente novamente.</string>
+    <string name="membro_excluido_message">Membro excluído com sucesso!</string>
+    <string name="excluir_membro_confirmar_title">Excluir membro</string>
+    <string name="excluir_membro_confirmar_message">Excluir %1$s da equipe? As tarefas atribuídas a este membro também serão excluídas.</string>
+    <string name="tarefa_erro_atualizar">Erro ao salvar alterações. Tente novamente.</string>
+    <string name="tarefa_erro_excluir">Erro ao excluir tarefa. Tente novamente.</string>
+    <string name="excluir_tarefa_confirmar_title">Excluir tarefa</string>
+    <string name="excluir_tarefa_confirmar_message">Tem certeza que deseja excluir esta tarefa? Essa ação não pode ser desfeita.</string>
+    <string name="tarefa_gerenciar_campos_obrigatorios">Preencha nome, responsável, status, prioridade e prazo.</string>
 </resources>

@@ -20,11 +20,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/ivLogout"
+            android:id="@+id/ivBack"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:clickable="true"
-            android:contentDescription="@string/logout_desc"
+            android:contentDescription="@string/back_desc"
             android:focusable="true"
             android:src="@drawable/ic_logout"
             app:layout_constraintBottom_toBottomOf="@id/tvAdminTitle"
@@ -41,9 +41,21 @@
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ivLogout"
+            app:layout_constraintEnd_toStartOf="@id/ivMenu"
+            app:layout_constraintStart_toEndOf="@id/ivBack"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivMenu"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:clickable="true"
+            android:contentDescription="@string/menu_desc"
+            android:focusable="true"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintBottom_toBottomOf="@id/tvAdminTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvAdminTitle" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -311,7 +323,6 @@
                         android:cursorVisible="false"
                         android:focusable="false"
                         android:inputType="none"
-                        android:text="@string/tarefa_gerenciar_prazo_data"
                         android:textSize="14sp" />
 
                 </LinearLayout>

@@ -49,8 +49,7 @@ class TelaMembroEquipeActivity : AppCompatActivity() {
         val membroUid = FirebaseAuth.getInstance().currentUser?.uid ?: return
         val concluida = getString(R.string.status_concluida)
 
-        tarefasListener = FirebaseFirestore.getInstance().collection(Tarefas.COLLECTION)
-            .whereEqualTo(Tarefas.FIELD_RESPONSAVEL_UID, membroUid)
+        tarefasListener = Tarefas.doUsuario(membroUid)
             .addSnapshotListener { snapshot, error ->
                 if (error != null || snapshot == null) {
                     Toast.makeText(this, R.string.tarefa_erro_carregar, Toast.LENGTH_SHORT).show()
@@ -85,11 +84,12 @@ class TelaMembroEquipeActivity : AppCompatActivity() {
     private fun abrirDetalhes(tarefa: Tarefa) {
         val intent = Intent(this, TelaVerDetalhesTarefaActivity::class.java)
         intent.putExtra(Tarefas.EXTRA_TAREFA_ID, tarefa.id)
+        intent.putExtra(Tarefas.EXTRA_RESPONSAVEL_UID, tarefa.responsavelUid)
         startActivity(intent)
     }
 
     private fun concluirTarefa(tarefa: Tarefa) {
-        FirebaseFirestore.getInstance().collection(Tarefas.COLLECTION)
+        Tarefas.doUsuario(tarefa.responsavelUid)
             .document(tarefa.id)
             .update(Tarefas.FIELD_STATUS, getString(R.string.status_concluida))
             .addOnSuccessListener {

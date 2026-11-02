@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_tarefas"
+        android:title="@string/tarefas_nav_label" />
+    <item
+        android:id="@+id/menu_equipe"
+        android:title="@string/team_nav_desc" />
+    <item
+        android:id="@+id/menu_criar_membro"
+        android:title="@string/menu_criar_membro" />
+    <item
+        android:id="@+id/menu_sair"
+        android:title="@string/logout_desc" />
+</menu>

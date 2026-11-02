@@ -14,7 +14,6 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
-import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Calendar
 import java.util.Locale
 
@@ -101,7 +100,7 @@ class TelaAtribuirTarefaActivity : AppCompatActivity() {
             )
 
             btnCriar.isEnabled = false
-            FirebaseFirestore.getInstance().collection(Tarefas.COLLECTION)
+            Tarefas.doUsuario(responsavel.uid)
                 .add(tarefa)
                 .addOnSuccessListener {
                     Toast.makeText(this, R.string.task_created_message, Toast.LENGTH_SHORT).show()

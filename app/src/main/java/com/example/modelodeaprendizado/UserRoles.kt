@@ -1,5 +1,22 @@
 package com.example.modelodeaprendizado
 
+import android.content.Context
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
+
+/**
+ * Auth de um app secundário do Firebase, usado para criar/remover contas de membros
+ * sem substituir a sessão do administrador logado.
+ */
+fun authSecundario(context: Context): FirebaseAuth {
+    val app = try {
+        FirebaseApp.getInstance("MemberCreation")
+    } catch (e: IllegalStateException) {
+        FirebaseApp.initializeApp(context, FirebaseApp.getInstance().options, "MemberCreation")
+    }
+    return FirebaseAuth.getInstance(app)
+}
+
 object UserRoles {
     const val COLLECTION = "usuarios"
     const val FIELD_TIPO_USUARIO = "tipo_usuario"
