@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
@@ -91,7 +92,13 @@ class TelaMembroEquipeActivity : AppCompatActivity() {
     private fun concluirTarefa(tarefa: Tarefa) {
         Tarefas.doUsuario(tarefa.responsavelUid)
             .document(tarefa.id)
-            .update(Tarefas.FIELD_STATUS, getString(R.string.status_concluida))
+            // O prazo não muda; a data de realização é o dia da conclusão (relógio do aparelho).
+            .update(
+                mapOf(
+                    Tarefas.FIELD_STATUS to getString(R.string.status_concluida),
+                    Tarefas.FIELD_DATA_REALIZACAO to Timestamp.now(),
+                )
+            )
             .addOnSuccessListener {
                 Toast.makeText(this, R.string.tarefa_concluida_message, Toast.LENGTH_SHORT).show()
             }

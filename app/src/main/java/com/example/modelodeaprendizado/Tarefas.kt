@@ -33,6 +33,8 @@ object Tarefas {
     const val FIELD_PRIORIDADE = "prioridade"
     const val FIELD_STATUS = "status"
     const val FIELD_CRIADA_EM = "criada_em"
+    /** Dia em que o membro concluiu a tarefa; só é preenchido ao clicar em Concluir. */
+    const val FIELD_DATA_REALIZACAO = "data_realizacao"
 
     const val EXTRA_TAREFA_ID = "tarefa_id"
     const val EXTRA_RESPONSAVEL_UID = "responsavel_uid"

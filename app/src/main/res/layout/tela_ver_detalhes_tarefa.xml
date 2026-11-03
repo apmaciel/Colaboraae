@@ -12,6 +12,7 @@
         android:id="@+id/layoutHeaderFixed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="64dp"
         android:background="@drawable/bg_membro_header_gradient"
         android:elevation="4dp"
         android:paddingHorizontal="20dp"
@@ -207,6 +208,25 @@
 
                         <TextView
                             android:id="@+id/tvDetalhePrazo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            tools:text="@string/tarefa_gerenciar_prazo_data"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:text="@string/realizada_colon_label"
+                            android:textColor="@color/table_header_gray"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <!-- Somente leitura: preenchida quando o membro conclui a tarefa. -->
+                        <TextView
+                            android:id="@+id/tvDetalheRealizada"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"

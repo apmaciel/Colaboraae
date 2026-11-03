@@ -116,6 +116,7 @@
     <string name="status_header">STATUS</string>
     <string name="prioridade_header">PRIORIDADE</string>
     <string name="prazo_header">PRAZO</string>
+    <string name="realizada_colon_label">REALIZADA:</string>
     <string name="descricao_da_tarefa_header">DESCRIÇÃO DA TAREFA</string>
     <string name="excluir_tarefa_button">Excluir Tarefa</string>
     <string name="salvar_alteracoes_button">Salvar Alterações</string>

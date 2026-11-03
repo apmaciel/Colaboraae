@@ -92,7 +92,7 @@
                 android:id="@+id/btnReceiveEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="64dp"
+                android:layout_marginHorizontal="40dp"
                 android:layout_marginTop="48dp"
                 android:layout_marginBottom="40dp"
                 android:backgroundTint="@color/black"
