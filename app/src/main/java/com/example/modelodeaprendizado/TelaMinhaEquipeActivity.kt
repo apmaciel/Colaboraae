@@ -125,7 +125,9 @@ class TelaMinhaEquipeActivity : AppCompatActivity() {
      */
     private fun excluirMembro(membro: MembroEquipe) {
         val db = FirebaseFirestore.getInstance()
-        Tarefas.doUsuario(membro.uid).get()
+        val adminUid = FirebaseAuth.getInstance().currentUser?.uid ?: return
+        // O filtro por admin_uid é necessário para as regras do Firestore aceitarem a consulta.
+        Tarefas.doUsuario(membro.uid).whereEqualTo(Tarefas.FIELD_ADMIN_UID, adminUid).get()
             .addOnSuccessListener { tarefas ->
                 val batch = db.batch()
                 tarefas.documents.forEach { batch.delete(it.reference) }

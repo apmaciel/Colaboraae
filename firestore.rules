@@ -1,0 +1,69 @@
+rules_version = '2';
+
+// Estrutura: usuarios/{uid} (administrador ou membro) e usuarios/{uid do membro}/tarefas/{id}.
+// Para publicar: Console do Firebase > Firestore Database > Regras (colar este conteúdo).
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function logado() {
+      return request.auth != null;
+    }
+
+    function perfil(uid) {
+      return get(/databases/$(database)/documents/usuarios/$(uid)).data;
+    }
+
+    function ehAdmin() {
+      return logado() && perfil(request.auth.uid).tipo_usuario == 'administrador';
+    }
+
+    match /usuarios/{uid} {
+      // Cada um lê o próprio perfil; o administrador lê os perfis dos membros que cadastrou.
+      allow read: if logado() &&
+        (request.auth.uid == uid || resource.data.admin_uid == request.auth.uid);
+
+      // Cadastro: a pessoa cria o próprio perfil de administrador (tela de cadastro)
+      // ou o administrador cria o perfil de um membro vinculado a ele (tela Criar Membro).
+      allow create: if logado() && (
+        (request.auth.uid == uid &&
+          request.resource.data.tipo_usuario == 'administrador' &&
+          !('admin_uid' in request.resource.data)) ||
+        (ehAdmin() &&
+          request.resource.data.tipo_usuario == 'membro' &&
+          request.resource.data.admin_uid == request.auth.uid)
+      );
+
+      // Só o administrador dono remove o membro. Perfis não são editados pelo app.
+      allow delete: if logado() && resource.data.admin_uid == request.auth.uid;
+
+      match /tarefas/{tarefaId} {
+        // O membro lê as próprias tarefas; o administrador lê as que ele atribuiu.
+        allow read: if logado() &&
+          (request.auth.uid == uid || resource.data.admin_uid == request.auth.uid);
+
+        // O administrador cria tarefas (também ao trocar o responsável) só para membros dele.
+        allow create: if ehAdmin() &&
+          request.resource.data.admin_uid == request.auth.uid &&
+          request.resource.data.responsavel_uid == uid &&
+          perfil(uid).admin_uid == request.auth.uid;
+
+        allow update: if logado() && (
+          // Administrador edita as tarefas dele, sem trocar o dono da tarefa.
+          (resource.data.admin_uid == request.auth.uid &&
+            request.resource.data.admin_uid == request.auth.uid) ||
+          // O membro só conclui a própria tarefa: muda apenas status e data de realização.
+          (request.auth.uid == uid &&
+            request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['status', 'data_realizacao']))
+        );
+
+        allow delete: if logado() && resource.data.admin_uid == request.auth.uid;
+      }
+    }
+
+    // Consulta do administrador que reúne as tarefas de todos os membros (collectionGroup).
+    match /{path=**}/tarefas/{tarefaId} {
+      allow read: if logado() && resource.data.admin_uid == request.auth.uid;
+    }
+  }
+}
