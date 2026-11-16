@@ -50,9 +50,6 @@ class TelaGerenciarTarefaActivity : AppCompatActivity() {
             insets
         }
 
-        val ivBack = findViewById<ImageView>(R.id.ivBack)
-        ivBack.setOnClickListener { finish() }
-
         configurarMenuAdministrador(findViewById(R.id.ivMenu))
 
         val ivTeamNav = findViewById<ImageView>(R.id.ivTeamNav)

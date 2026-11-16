@@ -31,11 +31,6 @@ class TelaVerDetalhesTarefaActivity : AppCompatActivity() {
             insets
         }
 
-        // Fica invisível até sabermos o tipo do usuário, para o ícone não "pular" de lado.
-        val ivBack = findViewById<ImageView>(R.id.ivBack)
-        ivBack.visibility = View.INVISIBLE
-        ivBack.setOnClickListener { finish() }
-
         // O menu é só do administrador: fica oculto até confirmarmos o tipo do usuário.
         val ivMenu = findViewById<ImageView>(R.id.ivMenu)
         ivMenu.visibility = View.GONE
@@ -56,7 +51,6 @@ class TelaVerDetalhesTarefaActivity : AppCompatActivity() {
             .addOnSuccessListener { perfil ->
                 when (perfil.getString(UserRoles.FIELD_TIPO_USUARIO)) {
                     UserRoles.ADMIN -> {
-                        ivBack.visibility = View.VISIBLE
                         ivMenu.visibility = View.VISIBLE
                         configurarMenuAdministrador(ivMenu)
                         carregarTarefa(responsavelUid, tarefaId)
@@ -64,8 +58,6 @@ class TelaVerDetalhesTarefaActivity : AppCompatActivity() {
                     // Membro só vê a tarefa que foi atribuída a ele.
                     UserRoles.MEMBER ->
                         if (responsavelUid == usuarioUid) {
-                            // O membro volta pelo botão "Voltar"; o ícone do topo fica oculto.
-                            ivBack.visibility = View.GONE
                             carregarTarefa(responsavelUid, tarefaId)
                         } else erroEFechar()
                     else -> erroEFechar()

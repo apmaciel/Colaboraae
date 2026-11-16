@@ -4,9 +4,9 @@ import android.app.DatePickerDialog
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -35,9 +35,6 @@ class TelaAtribuirTarefaActivity : AppCompatActivity() {
             insets
         }
 
-        val ivBack = findViewById<ImageView>(R.id.ivBack)
-        ivBack.setOnClickListener { finish() }
-
         val etNomeTarefa = findViewById<EditText>(R.id.etNomeTarefa)
         val spResponsavel = findViewById<Spinner>(R.id.spResponsavel)
         val spPrioridade = findViewById<Spinner>(R.id.spPrioridade)
@@ -64,7 +61,12 @@ class TelaAtribuirTarefaActivity : AppCompatActivity() {
         }
 
         val btnCancelar = findViewById<Button>(R.id.btnCancelar)
-        btnCancelar.setOnClickListener { finish() }
+        btnCancelar.setOnClickListener { irParaTarefas() }
+
+        // O botão "voltar" do sistema também leva às Tarefas, mesmo sem tela anterior na pilha.
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() = irParaTarefas()
+        })
 
         val btnCriar = findViewById<Button>(R.id.btnCriar)
         btnCriar.setOnClickListener {
@@ -104,7 +106,7 @@ class TelaAtribuirTarefaActivity : AppCompatActivity() {
                 .add(tarefa)
                 .addOnSuccessListener {
                     Toast.makeText(this, R.string.task_created_message, Toast.LENGTH_SHORT).show()
-                    finish()
+                    irParaTarefas()
                 }
                 .addOnFailureListener {
                     btnCriar.isEnabled = true
@@ -112,4 +114,7 @@ class TelaAtribuirTarefaActivity : AppCompatActivity() {
                 }
         }
     }
+
+    /** Vai para as Tarefas do administrador (continua logado), reaproveitando-as se já estiverem abertas. */
+    private fun irParaTarefas() = voltarOuIrParaTarefas()
 }

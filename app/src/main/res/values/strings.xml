@@ -127,6 +127,7 @@
     <string name="task_deleted_message">Tarefa excluída com sucesso!</string>
 
     <!-- Tela Ver Detalhes da Tarefa -->
+    <string name="detalhes_da_tarefa_title">Detalhes da Tarefa</string>
     <string name="detalhe_tarefa_titulo">Registrar relatório financeiro</string>
     <string name="responsavel_colon_label">RESPONSÁVEL:</string>
     <string name="status_colon_label">STATUS:</string>

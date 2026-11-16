@@ -35,6 +35,17 @@ fun Activity.configurarMenuAdministrador(ancora: View) {
 }
 
 /**
+ * Leva o administrador (que continua logado) para as Tarefas e fecha a tela atual.
+ * Reaproveita as Tarefas se já estiverem abertas (rápido) e só cria uma nova quando preciso.
+ */
+fun Activity.voltarOuIrParaTarefas() {
+    val intent = Intent(this, TelaAdministradorEquipeActivity::class.java)
+    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+    startActivity(intent)
+    finish()
+}
+
+/**
  * Reaproveita a tela se ela já estiver aberta (fechando as que estão por cima dela),
  * para o menu não empilhar cópias da mesma tela.
  */

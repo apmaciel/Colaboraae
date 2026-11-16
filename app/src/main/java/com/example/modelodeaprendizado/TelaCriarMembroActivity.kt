@@ -3,8 +3,8 @@ package com.example.modelodeaprendizado
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,13 +29,15 @@ class TelaCriarMembroActivity : AppCompatActivity() {
             insets
         }
 
-        val ivBack = findViewById<ImageView>(R.id.ivBack)
-        ivBack.setOnClickListener { finish() }
-
         configurarMenuAdministrador(findViewById(R.id.ivMenu))
 
         val btnCancelar = findViewById<Button>(R.id.btnCancelar)
-        btnCancelar.setOnClickListener { finish() }
+        btnCancelar.setOnClickListener { voltarOuIrParaTarefas() }
+
+        // O botão "voltar" do sistema segue a mesma regra do Cancelar.
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() = voltarOuIrParaTarefas()
+        })
 
         val etNome = findViewById<EditText>(R.id.etNome)
         val etEmail = findViewById<EditText>(R.id.etEmail)
@@ -79,7 +81,7 @@ class TelaCriarMembroActivity : AppCompatActivity() {
                         .set(memberData)
                         .addOnSuccessListener {
                             Toast.makeText(this, R.string.member_created_message, Toast.LENGTH_SHORT).show()
-                            finish()
+                            voltarOuIrParaTarefas()
                         }
                         .addOnFailureListener {
                             btnCriar.isEnabled = true

@@ -37,13 +37,6 @@ class TelaMinhaEquipeActivity : AppCompatActivity() {
             insets
         }
 
-        // Tarefas e Equipe se substituem na navegação, então "voltar" daqui leva às Tarefas.
-        val ivBack = findViewById<ImageView>(R.id.ivBack)
-        ivBack.setOnClickListener {
-            startActivity(Intent(this, TelaAdministradorEquipeActivity::class.java))
-            finish()
-        }
-
         configurarMenuAdministrador(findViewById(R.id.ivMenu))
 
         val ivTasksNav = findViewById<ImageView>(R.id.ivTasksNav)
